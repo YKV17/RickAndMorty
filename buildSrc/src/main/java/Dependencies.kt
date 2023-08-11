@@ -6,6 +6,10 @@ object Dependencies {
         val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraintVersion}"
     }
 
+    object SplashDep{
+        val splash = "androidx.core:core-splashscreen:${Versions.splashVersion}"
+    }
+
     object TestDep {
         var junit = "junit:junit:${Versions.junitVersion}"
         var testJunitExt = "androidx.test.ext:junit:${Versions.testJunitExtVersion}"

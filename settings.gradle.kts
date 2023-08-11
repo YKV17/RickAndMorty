@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RickAndMorty"
 include(":app")
- 
+include(":androidCommon:common_utils")

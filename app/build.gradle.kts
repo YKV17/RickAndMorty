@@ -17,6 +17,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -41,6 +45,7 @@ dependencies {
     implementation(Dependencies.CoreDep.appCompat)
     implementation(Dependencies.CoreDep.material)
     implementation(Dependencies.CoreDep.constraint)
+    implementation(Dependencies.SplashDep.splash)
 
     testImplementation(Dependencies.TestDep.junit)
     androidTestImplementation(Dependencies.TestDep.testJunitExt)

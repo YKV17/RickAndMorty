@@ -1,4 +1,4 @@
-package com.noble.rickandmorty
+package com.noble.rickandmorty.ui.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

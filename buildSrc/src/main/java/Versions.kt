@@ -1,13 +1,18 @@
 object Versions {
-    val coreKtxVersion = "1.10.1"
-    val appCompatVersion = "1.6.1"
-    val materialVersion = "1.9.0"
-    val constraintVersion = "2.1.4"
-    val splashVersion = "1.0.0"
+    const val coreKtxVersion = "1.10.1"
+    const val appCompatVersion = "1.6.1"
+    const val materialVersion = "1.9.0"
+    const val constraintVersion = "2.1.4"
+    const val splashVersion = "1.0.0"
 
-    val junitVersion = "4.13.2"
-    val testJunitExtVersion = "1.1.5"
-    val espressoCoreVersion = "3.5.1"
+    const val hilt = "2.47"
+    const val coroutines = "1.7.3"
+    const val retrofit = "2.9.0"
+    const val okHttp = "3.6.0"
+
+    const val junitVersion = "4.13.2"
+    const val testJunitExtVersion = "1.1.5"
+    const val espressoCoreVersion = "3.5.1"
 
 
 }

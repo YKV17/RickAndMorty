@@ -1,18 +1,37 @@
 object Dependencies {
     object CoreDep {
-        val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
-        val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
-        val material = "com.google.android.material:material:${Versions.materialVersion}"
-        val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraintVersion}"
+        const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
+        const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
+        const val material = "com.google.android.material:material:${Versions.materialVersion}"
+        const val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraintVersion}"
     }
 
     object SplashDep{
-        val splash = "androidx.core:core-splashscreen:${Versions.splashVersion}"
+        const val splash = "androidx.core:core-splashscreen:${Versions.splashVersion}"
+    }
+
+    object HiltDep{
+        const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+        const val hiltCore = "com.google.dagger:hilt-core:${Versions.hilt}"
+        const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+        const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+    }
+
+    object Retrofit{
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+        const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+        const val retrofitOkHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+    }
+
+    object Coroutines{
+        const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+        const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     }
 
     object TestDep {
-        var junit = "junit:junit:${Versions.junitVersion}"
-        var testJunitExt = "androidx.test.ext:junit:${Versions.testJunitExtVersion}"
-        var espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+        const val junit = "junit:junit:${Versions.junitVersion}"
+        const val testJunitExt = "androidx.test.ext:junit:${Versions.testJunitExtVersion}"
+        const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
     }
+
 }

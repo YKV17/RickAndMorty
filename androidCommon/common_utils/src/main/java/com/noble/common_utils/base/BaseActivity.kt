@@ -9,7 +9,8 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseActivity<VM : ViewModel, B : ViewBinding> : AppCompatActivity() {
 
-    private lateinit var binding: B
+    protected lateinit var binding: B
+    protected lateinit var viewModel: VM
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, getLayout())

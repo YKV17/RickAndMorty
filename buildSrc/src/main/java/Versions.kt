@@ -4,6 +4,7 @@ object Versions {
     const val materialVersion = "1.9.0"
     const val constraintVersion = "2.1.4"
     const val splashVersion = "1.0.0"
+    const val multidexVersion = "2.0.1"
 
     const val hilt = "2.47"
     const val coroutines = "1.7.3"

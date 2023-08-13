@@ -10,6 +10,10 @@ object Dependencies {
         const val splash = "androidx.core:core-splashscreen:${Versions.splashVersion}"
     }
 
+    object MultiDex{
+        const val multidex = "androidx.multidex:multidex:${Versions.multidexVersion}"
+    }
+
     object HiltDep{
         const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
         const val hiltCore = "com.google.dagger:hilt-core:${Versions.hilt}"

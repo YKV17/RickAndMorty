@@ -4,11 +4,12 @@ import com.noble.home_domain.models.Character
 import com.noble.home_domain.repository.CharacterRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class GetCharacterListUseCaseImpl(
-       private val characterRepository: CharacterRepository
-): GetCharacterListUseCase {
-       override suspend fun invoke(): Flow<List<Character>> = flow {
-              emit(characterRepository.getCharacters())
-       }
+class GetCharacterListUseCaseImpl @Inject constructor(
+    private val characterRepository: CharacterRepository
+) : GetCharacterListUseCase {
+    override suspend fun invoke(): Flow<List<Character>> = flow {
+        emit(characterRepository.getCharacters())
+    }
 }

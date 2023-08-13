@@ -6,6 +6,10 @@ object Dependencies {
         const val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraintVersion}"
     }
 
+    object Fragment{
+        const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtxVersion}"
+    }
+
     object SplashDep{
         const val splash = "androidx.core:core-splashscreen:${Versions.splashVersion}"
     }
@@ -17,8 +21,12 @@ object Dependencies {
     object HiltDep{
         const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
         const val hiltCore = "com.google.dagger:hilt-core:${Versions.hilt}"
-        const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+        const val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
         const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+    }
+
+    object JavaDep {
+        const val javax = "javax.inject:javax.inject:${Versions.javaxInjectVersion}"
     }
 
     object Retrofit{

@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-
+    implementation(Dependencies.JavaDep.javax)
 }

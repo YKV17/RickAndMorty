@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
+    id("kotlin")
 }
 
 java {
@@ -11,9 +12,6 @@ java {
 dependencies {
     implementation(project(Modules.Home.home_domain))
 
-    implementation(Dependencies.Coroutines.coroutinesCore)
-
+    implementation(Dependencies.JavaDep.javax)
     implementation(Dependencies.Retrofit.retrofit)
-    implementation(Dependencies.Retrofit.retrofitOkHttp)
-    implementation(Dependencies.Retrofit.retrofitGsonConverter)
 }

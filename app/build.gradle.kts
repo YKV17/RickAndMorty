@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -19,6 +21,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 
     buildTypes {
@@ -41,11 +44,22 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.Common.common_utils))
+    implementation(project(Modules.Home.home_data))
+    implementation(project(Modules.Home.home_domain))
+    implementation(project(Modules.Home.home_presentation))
+
     implementation(Dependencies.CoreDep.coreKtx)
     implementation(Dependencies.CoreDep.appCompat)
     implementation(Dependencies.CoreDep.material)
     implementation(Dependencies.CoreDep.constraint)
     implementation(Dependencies.SplashDep.splash)
+    implementation(Dependencies.HiltDep.hiltAndroid)
+    kapt(Dependencies.HiltDep.hiltAndroidCompiler)
+
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.retrofitOkHttp)
+    implementation(Dependencies.Retrofit.retrofitGsonConverter)
 
     testImplementation(Dependencies.TestDep.junit)
     androidTestImplementation(Dependencies.TestDep.testJunitExt)

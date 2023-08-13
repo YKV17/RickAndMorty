@@ -4,9 +4,9 @@ import com.noble.home_data.mapper.toDomainModel
 import com.noble.home_data.network.CharacterService
 import com.noble.home_domain.models.Character
 import com.noble.home_domain.repository.CharacterRepository
-import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class CharacterRepositoryImpl(
+class CharacterRepositoryImpl @Inject constructor(
     private val characterService: CharacterService
 ) : CharacterRepository {
     override suspend fun getCharacters(): List<Character> {

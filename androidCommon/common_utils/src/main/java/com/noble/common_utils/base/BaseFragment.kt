@@ -13,8 +13,7 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment<VM : ViewModel, B : ViewBinding>: Fragment() {
 
     protected lateinit var binding: B
-    protected lateinit var viewModel: VM
-
+    protected abstract val viewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +31,7 @@ abstract class BaseFragment<VM : ViewModel, B : ViewBinding>: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpView()
         setObservers()
     }
 
@@ -61,12 +61,12 @@ abstract class BaseFragment<VM : ViewModel, B : ViewBinding>: Fragment() {
     override fun onDestroy() {
         super.onDestroy()
     }
+    @LayoutRes
+    abstract fun getLayout(): Int
 
+    abstract fun setUpView()
     abstract fun setListeners()
     abstract fun removeListeners()
     abstract fun setObservers()
     abstract fun removeObservers()
-
-    @LayoutRes
-    abstract fun getLayout(): Int
 }

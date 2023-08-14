@@ -42,7 +42,8 @@ android {
     }
 
     lint {
-        baseline = file("lint_checks.xml")
+        // https://github.com/bumptech/glide/issues/4940
+        lintConfig = file("$rootDir/lint_checks.xml")
     }
 }
 

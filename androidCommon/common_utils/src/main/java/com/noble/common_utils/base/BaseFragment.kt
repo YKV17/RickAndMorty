@@ -9,12 +9,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelLazy
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStore
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<B: ViewDataBinding>: Fragment() {
+abstract class BaseFragment<VM: ViewModel, B: ViewDataBinding>: Fragment() {
 
     protected lateinit var binding: B
-
+    protected abstract val viewModel: VM
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -64,8 +67,6 @@ abstract class BaseFragment<B: ViewDataBinding>: Fragment() {
     }
     @LayoutRes
     abstract fun getLayout(): Int
-
-    /*abstract fun setBinding(view: View)*/
     abstract fun setUpView()
     abstract fun setListeners()
     abstract fun removeListeners()

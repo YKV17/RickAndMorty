@@ -9,15 +9,10 @@ import com.noble.home_presentation.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<HomeFragmentViewModel, FragmentHomeBinding>() {
 
-    private val viewModel: HomeFragmentViewModel by viewModels()
-
+    override val viewModel: HomeFragmentViewModel by viewModels()
     override fun getLayout(): Int = R.layout.fragment_home
-
-    /*override fun setBinding(view: View) {
-        binding = DataBindingUtil.bind(view)!!
-    }*/
 
     override fun setUpView() {
         viewModel.getCharacters()

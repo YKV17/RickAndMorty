@@ -40,6 +40,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    lint {
+        baseline = file("lint_checks.xml")
+    }
 }
 
 dependencies {

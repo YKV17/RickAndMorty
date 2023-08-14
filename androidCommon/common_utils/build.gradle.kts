@@ -48,6 +48,7 @@ dependencies {
     implementation(Dependencies.CoreDep.constraint)
 
     implementation(Dependencies.ImageLoadingDep.glide)
+    implementation(Dependencies.ImageLoadingDep.glideCompiler)
 
     testImplementation(Dependencies.TestDep.junit)
     androidTestImplementation(Dependencies.TestDep.testJunitExt)

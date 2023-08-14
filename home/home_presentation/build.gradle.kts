@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(project(Modules.AndroidCommon.common_utils))
+    implementation(project(Modules.Common.common_utils))
     implementation(project(Modules.Home.home_domain))
 
     implementation(Dependencies.CoreDep.coreKtx)

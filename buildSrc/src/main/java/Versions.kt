@@ -12,6 +12,7 @@ object Versions {
     const val coroutines = "1.7.3"
     const val retrofit = "2.9.0"
     const val okHttp = "3.6.0"
+    const val glide = "4.15.1"
 
     const val junitVersion = "4.13.2"
     const val testJunitExtVersion = "1.1.5"

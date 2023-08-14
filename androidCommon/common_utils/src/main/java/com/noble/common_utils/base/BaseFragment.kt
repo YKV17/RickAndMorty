@@ -4,15 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelLazy
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VM: ViewModel, B: ViewDataBinding>: Fragment() {
 
@@ -28,7 +22,8 @@ abstract class BaseFragment<VM: ViewModel, B: ViewDataBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = DataBindingUtil.inflate(inflater, getLayout(), container, false)
+//        binding = DataBindingUtil.inflate(inflater, getLayout(), container, false)
+        binding = getViewBinding()
         return binding.root
     }
 
@@ -65,8 +60,8 @@ abstract class BaseFragment<VM: ViewModel, B: ViewDataBinding>: Fragment() {
     override fun onDestroy() {
         super.onDestroy()
     }
-    @LayoutRes
-    abstract fun getLayout(): Int
+
+    abstract fun getViewBinding(): B
     abstract fun setUpView()
     abstract fun setListeners()
     abstract fun removeListeners()

@@ -25,6 +25,10 @@ object Dependencies {
         const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
     }
 
+    object ImageLoadingDep{
+        const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    }
+
     object JavaDep {
         const val javax = "javax.inject:javax.inject:${Versions.javaxInjectVersion}"
     }

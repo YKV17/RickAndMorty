@@ -8,6 +8,7 @@ import com.noble.home_domain.models.Character
 import com.noble.home_domain.use_cases.GetCharacterListUseCase
 import com.noble.home_presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

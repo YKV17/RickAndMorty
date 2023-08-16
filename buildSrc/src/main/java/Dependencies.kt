@@ -43,12 +43,31 @@ object Dependencies {
     object Coroutines{
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+
+        const val coroutinesTest =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTestVersion}"
+
     }
 
     object TestDep {
         const val junit = "junit:junit:${Versions.junitVersion}"
         const val testJunitExt = "androidx.test.ext:junit:${Versions.testJunitExtVersion}"
         const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+
+        //Creating mock Objects for testing
+        const val mockitoKotlin =
+            "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlinVersion}"
+        const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoInlineVersion}"
+
+        //mockk kotlin
+        const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
+        const val mockkAndroid = "io.mockk:mockk-android:${Versions.mockkVersion}"
+        const val mockkAgent = "io.mockk:mockk-agent:${Versions.mockkVersion}"
+
+
+
+        //Test State Flow
+        const val turbine = "app.cash.turbine:turbine:${Versions.turbineVersion}"
     }
 
 }

@@ -49,7 +49,9 @@ class CharactersAdapter @Inject constructor(private val imageLoadingAdapter: Ima
                 tvCharacterName.text = item.name
                 tvLocation.text = item.characterLocation.name
                 tvStatus.text = "${item.status} - ${item.species}"
-                imageLoadingAdapter.loadImage(item.image, ivCharacter)
+                imageLoadingAdapter
+                    .load(item.image)
+                    .into(ivCharacter)
             }
         }
 

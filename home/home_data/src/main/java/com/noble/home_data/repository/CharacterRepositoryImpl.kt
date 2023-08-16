@@ -9,6 +9,7 @@ import javax.inject.Inject
 class CharacterRepositoryImpl @Inject constructor(
     private val characterService: CharacterService
 ) : CharacterRepository {
+
     override suspend fun getCharacters(): List<Character> {
         return characterService.getCharacters().results?.map { result ->
             result.toDomainModel()

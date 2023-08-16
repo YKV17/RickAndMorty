@@ -59,6 +59,12 @@ dependencies {
 
     //Test
     testImplementation(Dependencies.TestDep.junit)
+
+    testImplementation(Dependencies.TestDep.mockitoKotlin)
+    testImplementation(Dependencies.TestDep.mockitoKotlin)
+    testImplementation(Dependencies.Coroutines.coroutinesTest)
+    testImplementation(Dependencies.TestDep.turbine)
+    testImplementation(Dependencies.Coroutines.coroutinesCore)
     androidTestImplementation(Dependencies.TestDep.testJunitExt)
     androidTestImplementation(Dependencies.TestDep.espressoCore)
 }

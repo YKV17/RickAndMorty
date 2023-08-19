@@ -5,4 +5,13 @@ data class Info(
     val next: String ?,
     val pages: Int ?,
     val prev: String?
-)
+){
+    companion object{
+        fun getInfo() = Info(
+            count = 0,
+            next = "",
+            pages = 0,
+            prev = ""
+        )
+    }
+}

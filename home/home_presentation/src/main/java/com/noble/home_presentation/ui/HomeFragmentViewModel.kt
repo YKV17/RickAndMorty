@@ -37,11 +37,9 @@ class HomeFragmentViewModel @Inject constructor(
                 _characters.value = State.Loading(R.string.loading)
                 getCharacterListUseCase()
                     .collect { data ->
-                    if(data != null) {
+
                         _characters.value = State.Success<List<Character>>(data)
-                    }else{
-                        _characters.value = State.Error(R.string.something_went_wrong, ErrorType.EMPTY)
-                    }
+
                 }
             } catch (e: Exception) {
                 _characters.value = State.Error(R.string.something_went_wrong, ErrorType.CUSTOM_ERROR)

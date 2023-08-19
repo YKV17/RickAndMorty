@@ -60,7 +60,9 @@ class HomeFragmentViewModelTest {
     fun `given server response 200 _ when fetch _ should return success`() = runTest {
         val expectedResult = listOf<Character>()
         Mockito.`when`(getCharacterListUseCase()).thenReturn(flowOf(expectedResult))
+
         sut.getCharacters()
+
         sut.characters.test {
 
             var state = awaitItem()

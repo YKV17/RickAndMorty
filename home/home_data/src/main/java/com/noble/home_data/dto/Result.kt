@@ -13,4 +13,23 @@ data class Result(
     val status: String?,
     val type: String?,
     val url: String?
-)
+) {
+    companion object {
+        fun getResult() = Result(
+            created = "",
+            episode = listOf<String>(),
+            gender = "",
+            id = 0,
+            image = "",
+            location = Location.getLocation(),
+            name = "",
+            origin = Origin.getOrigin(),
+            species = "",
+            status = "",
+            type = "",
+            url = ""
+        )
+
+        fun getResultList() = listOf<Result>()
+    }
+}

@@ -68,7 +68,6 @@ class GetCharacterListUseCaseImplTest {
 
         assert(exception.message == "Thrown from repository")
         verify(characterRepository, times(1)).getCharacters()
-
     }
 
 

@@ -23,3 +23,7 @@ The Rick And Morty app utilizes a [Rick and Morty API](https://rickandmortyapi.c
 - [OkHttp](http://square.github.io/okhttp/) - HTTP client that's efficient by default: HTTP/2 support allows all requests to the same host to share a socket
 - [Gson](https://github.com/google/gson) -  A library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object.
 - [Glide](https://bumptech.github.io/glide/) - Glide is a fast and efficient image loading library for Android 
+
+
+## Reference repository
+This repository code is mostly inspired by [Rick-and-Morty](https://github.com/akhilesh0707/Rick-and-Morty) and [News_MultiModule](https://github.com/himanshuGaur684/News_MultiModule_YT/tree/part_7_presentation_layer_for_search_module).

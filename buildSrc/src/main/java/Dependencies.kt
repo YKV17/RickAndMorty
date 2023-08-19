@@ -53,6 +53,9 @@ object Dependencies {
         const val junit = "junit:junit:${Versions.junitVersion}"
         const val testJunitExt = "androidx.test.ext:junit:${Versions.testJunitExtVersion}"
         const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+        const val jupiter = "org.junit.jupiter:junit-jupiter:${Versions.jupiterVersion}"
+
+        //    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
         //Creating mock Objects for testing
         const val mockitoKotlin =
@@ -68,6 +71,10 @@ object Dependencies {
 
         //Test State Flow
         const val turbine = "app.cash.turbine:turbine:${Versions.turbineVersion}"
+    }
+
+    object KotlinDep {
+        const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
     }
 
 }

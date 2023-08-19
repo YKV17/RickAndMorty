@@ -10,4 +10,5 @@ java {
 
 dependencies {
     implementation(Dependencies.JavaDep.javax)
+    implementation(Dependencies.Coroutines.coroutinesCore)
 }

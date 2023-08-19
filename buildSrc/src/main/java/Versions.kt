@@ -20,6 +20,7 @@ object Versions {
     const val junitVersion = "4.13.2"
     const val testJunitExtVersion = "1.1.5"
     const val espressoCoreVersion = "3.5.1"
+    const val jupiterVersion = "5.10.0"
 
     const val mockitoCoreVersion = "3.9.0"
     const val mockitoInlineVersion = "2.13.0"
@@ -28,6 +29,7 @@ object Versions {
 
     const val mockkVersion = "1.13.1"
     const val turbineVersion = "1.0.0"
+    const val kotlinVersion = "1.4.32"
 
 
 

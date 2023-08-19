@@ -12,11 +12,11 @@ dependencies {
     implementation(project(Modules.Common.common_utils))
 
     implementation(Dependencies.Coroutines.coroutinesCore)
-    implementation(Dependencies.TestDep.jupiter)
     implementation(Dependencies.JavaDep.javax)
 
     //Test
     testImplementation(Dependencies.TestDep.junit)
     testImplementation(Dependencies.TestDep.mockitoKotlin)
     testImplementation(Dependencies.Coroutines.coroutinesTest)
+    testImplementation(Dependencies.TestDep.jupiter)
 }

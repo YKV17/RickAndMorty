@@ -40,7 +40,7 @@ android {
 
 dependencies {
 
-//    implementation(project(Modules.Common.common_utils))
+    implementation(project(Modules.Common.common_utils))
 
     implementation(Dependencies.CoreDep.coreKtx)
     implementation(Dependencies.CoreDep.appCompat)

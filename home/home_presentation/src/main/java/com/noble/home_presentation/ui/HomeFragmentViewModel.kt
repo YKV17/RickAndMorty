@@ -1,21 +1,19 @@
 package com.noble.home_presentation.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noble.common_utils.coroutines.CoroutineContextProvider
 import com.noble.common_utils.enums.ErrorType
+import com.noble.common_utils.error.ErrorEntity
+import com.noble.common_utils.error.Result
+import com.noble.common_utils.extensions.getErrorString
 import com.noble.common_utils.state.State
 import com.noble.home_domain.models.Character
 import com.noble.home_domain.use_cases.GetCharacterListUseCase
 import com.noble.home_presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -36,13 +34,18 @@ class HomeFragmentViewModel @Inject constructor(
             try {
                 _characters.value = State.Loading(R.string.loading)
                 getCharacterListUseCase()
-                    .collect { data ->
-
-                        _characters.value = State.Success<List<Character>>(data)
-
+                    .collect { result ->
+                        when(result){
+                            is Result.Success -> {
+                                _characters.value = State.Success(result.data)
+                            }
+                            is Result.Error -> {
+                                _characters.value =  State.Error(result.getErrorString(), ErrorType.CUSTOM_ERROR, result.error)
+                            }
+                        }
                 }
             } catch (e: Exception) {
-                _characters.value = State.Error(R.string.something_went_wrong, ErrorType.CUSTOM_ERROR)
+                _characters.value = State.Error(R.string.something_went_wrong, ErrorType.CUSTOM_ERROR, ErrorEntity.Unknown)
             }
         }
     }

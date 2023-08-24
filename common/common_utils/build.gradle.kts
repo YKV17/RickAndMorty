@@ -11,4 +11,6 @@ java {
 dependencies {
     implementation(Dependencies.JavaDep.javax)
     implementation(Dependencies.Coroutines.coroutinesCore)
+
+    implementation(Dependencies.Retrofit.retrofit)
 }

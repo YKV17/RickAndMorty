@@ -8,5 +8,5 @@ sealed class State<out T>{
     object Idle:State<Nothing>()
     class Loading(@StringRes val messageId: Int):State<Nothing>()
     class Success<out T>(val data: T):State<T>()
-    class Error(@StringRes val messageId: Int, val type: ErrorType, error: ErrorEntity):State<Nothing>()
+    class Error(@StringRes val messageId: Int, val type: ErrorType, val error: ErrorEntity):State<Nothing>()
 }

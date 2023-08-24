@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.noble.common_utils.base.BaseFragment
 import com.noble.common_utils.enums.ErrorType
+import com.noble.common_utils.error.ErrorEntity
 import com.noble.common_utils.extensions.observeLatestWhenCreated
 import com.noble.common_utils.state.State
 import com.noble.home_presentation.R
@@ -52,20 +53,30 @@ class HomeFragment : BaseFragment<HomeFragmentViewModel, FragmentHomeBinding>() 
                     charactersAdapter.list = state.data
                 }
                 is State.Error -> {
-                    handleError(getString(state.messageId), state.type)
+                    handleError(state)
+                    
                 }
                 else -> {}
             }
         }
     }
 
-    private fun handleError(message: String, errorType: ErrorType){
-        when(errorType){
+    private fun handleError(error: State.Error){
+
+        when(error.type){
             ErrorType.NO_INTERNET -> {
                 Toast.makeText(requireContext(), getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show()
             }
             ErrorType.CUSTOM_ERROR -> {
-                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+                when(error.error){
+                    ErrorEntity.AccessDenied -> {}
+                    ErrorEntity.Network -> {}
+                    ErrorEntity.NotFound -> {}
+                    ErrorEntity.ServiceUnavailable -> {}
+                    ErrorEntity.Unknown -> {
+
+                    }
+                }
             }
 
             ErrorType.EMPTY -> {

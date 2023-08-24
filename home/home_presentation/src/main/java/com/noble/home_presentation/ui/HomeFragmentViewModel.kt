@@ -42,6 +42,9 @@ class HomeFragmentViewModel @Inject constructor(
                             is Result.Error -> {
                                 _characters.value =  State.Error(result.getErrorString(), ErrorType.CUSTOM_ERROR, result.error)
                             }
+                            else -> {
+
+                            }
                         }
                 }
             } catch (e: Exception) {

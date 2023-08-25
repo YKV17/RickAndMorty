@@ -3,6 +3,8 @@ package com.noble.home_domain.use_cases
 import com.nhaarman.mockitokotlin2.doAnswer
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
+import com.noble.common_utils.error.ErrorEntity
+import com.noble.common_utils.wrapper.Result
 import com.noble.home_domain.repository.CharacterRepository
 import com.noble.home_domain.util.FakeData
 import com.noble.home_domain.util.MainDispatcherRule
@@ -48,25 +50,25 @@ class GetCharacterListUseCaseImplTest {
     fun `when return success the repository method should return flow of list and should be called max 1 time`() =
         runTest {
 
-            Mockito.`when`(characterRepository.getCharacters()).thenReturn(FakeData.getCharacters())
+            Mockito.`when`(characterRepository.getCharacters()).thenReturn(Result.Success(FakeData.getCharacters()))
 
-            val characters = sut.invoke().single()
+            val response = sut.invoke().single()
 
-            assert(characters.size == 2)
+            assert(response is Result.Success)
+            assert((response as Result.Success).data.size == 2 )
             verify(characterRepository, times(1)).getCharacters()
 
         }
 
     @Test
-    fun `when return error the repository method return with exception 1`() = runTest {
+    fun `when return error the repository method return error`() = runTest {
 
-        Mockito.`when`(characterRepository.getCharacters()).doAnswer { throw HttpTimeoutException("Thrown from repository")}
+        Mockito.`when`(characterRepository.getCharacters()).thenReturn(Result.Error(ErrorEntity.Unknown))
 
-        val exception = assertThrows<HttpTimeoutException> {
-                sut.invoke().single()
-        }
+        val response = sut.invoke().single()
 
-        assert(exception.message == "Thrown from repository")
+        assert(response is Result.Error)
+        assert((response as Result.Error).error == ErrorEntity.Unknown )
         verify(characterRepository, times(1)).getCharacters()
     }
 

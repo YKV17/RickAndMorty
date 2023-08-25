@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.noble.common_utils.coroutines.CoroutineContextProvider
 import com.noble.common_utils.enums.ErrorType
 import com.noble.common_utils.error.ErrorEntity
-import com.noble.common_utils.error.Result
+import com.noble.common_utils.wrapper.Result
 import com.noble.common_utils.extensions.getErrorString
 import com.noble.common_utils.state.State
 import com.noble.home_domain.models.Character

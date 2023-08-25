@@ -6,5 +6,6 @@ data class CharactersResponseDto(
 ){
     companion object{
         fun getCharacterResponseDao() = CharactersResponseDto(Info.getInfo(), Result.getResultList())
+        fun getCharacterResponseDaoNullList() = CharactersResponseDto(Info.getInfo(), null)
     }
 }

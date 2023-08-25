@@ -9,6 +9,7 @@ import com.noble.home_domain.models.Character
 
 class FakeData {
     companion object{
+        fun getCharacterResponseDtoWithNullList() = CharactersResponseDto.getCharacterResponseDaoNullList()
         fun getCharacterResponseDtoEmpty() = CharactersResponseDto.getCharacterResponseDao()
         fun getCharacterResponseDtoWithData(): CharactersResponseDto {
             val resultList = arrayListOf<Result>()

@@ -3,7 +3,9 @@ package com.noble.home_presentation.viewmodel
 import app.cash.turbine.test
 import com.nhaarman.mockitokotlin2.verify
 import com.noble.common_utils.coroutines.CoroutineContextProvider
+import com.noble.common_utils.error.ErrorEntity
 import com.noble.common_utils.state.State
+import com.noble.common_utils.wrapper.Result
 import com.noble.home_domain.models.Character
 import com.noble.home_domain.use_cases.GetCharacterListUseCase
 import com.noble.home_presentation.ui.HomeFragmentViewModel
@@ -58,7 +60,7 @@ class HomeFragmentViewModelTest {
 
     @Test
     fun `given server response 200 _ when fetch _ should return success`() = runTest {
-        val expectedResult = listOf<Character>()
+        val expectedResult = Result.Success(listOf<Character>())
         Mockito.`when`(getCharacterListUseCase()).thenReturn(flowOf(expectedResult))
 
         sut.getCharacters()
@@ -77,7 +79,25 @@ class HomeFragmentViewModelTest {
     @Test
     fun `given server response error _ when fetch _ should return error`() = runTest {
 
-        val expectedResult = listOf<Character>()
+        val expectedResult = Result.Error<List<Character>>(ErrorEntity.Unknown)
+        Mockito.`when`(getCharacterListUseCase()).thenReturn(flowOf(expectedResult))
+
+        sut.getCharacters()
+        sut.characters.test {
+
+            var state = awaitItem()
+            assert(state is State.Error)
+
+            cancelAndIgnoreRemainingEvents()
+        }
+
+        verify(getCharacterListUseCase).invoke()
+    }
+
+    @Test
+    fun `exception when giving server response _ when fetch _ should return error`() = runTest {
+
+        val expectedResult = Result.Error<List<Character>>(ErrorEntity.Unknown)
         Mockito.`when`(getCharacterListUseCase()).thenReturn(flow {
             throw Exception("Message")
         })

@@ -2,7 +2,7 @@ package com.noble.common_utils.extensions
 
 import com.noble.common_utils.R
 import com.noble.common_utils.error.ErrorEntity
-import com.noble.common_utils.error.Result
+import com.noble.common_utils.wrapper.Result
 
 fun Result.Error<*>.getErrorString(): Int = when (error) {
     ErrorEntity.AccessDenied -> {
